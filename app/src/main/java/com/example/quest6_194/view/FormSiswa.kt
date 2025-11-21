@@ -3,7 +3,10 @@ package com.example.quest6_194.view
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
@@ -115,7 +118,15 @@ fun FormSiswa (
                     txtAlamat = it
                 }
             )
+            Spacer(modifier = Modifier.height(height = 20.dp))
 
+            Button(
+                modifier = Modifier.fillMaxWidth(1f),
+                enabled = txtAlamat.isNotEmpty(),
+                onClick = {OnSubmitButtonClicked(listData)}
+            ) {
+                Text (text = stringResource(R.string.submit))
+            }
         }
     }
 }
