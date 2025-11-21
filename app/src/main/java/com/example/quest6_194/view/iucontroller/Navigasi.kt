@@ -38,7 +38,7 @@ fun DataApp(
             // ⬅ Halaman Form
             composable(Navigasi.FormSiswa.name) {
                 FormSiswa(
-                    pilihanJK = listOf("Laki-laki", "Perempuan", "Lainnya"),
+                    pilihanJK = listOf("Laki-laki", "Perempuan"),
                     OnSubmitButtonClicked = { listData ->
                         siswaViewModel.setSiswa(listData)
                         navController.navigate(Navigasi.DetailSiswa.name)
