@@ -27,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.quest6_194.R
@@ -66,6 +67,13 @@ fun FormSiswa (
                     txtNama = it
                 }
             )
+
+            HorizontalDivider(
+                modifier = Modifier
+                .padding(12.dp)
+                .width(250.dp),
+                thickness = dimensionResource(1dp),
+                color = Color.Blue)
 
         }
     }
