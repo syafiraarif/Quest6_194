@@ -47,6 +47,13 @@ fun FormSiswa (
         topBar = { TopAppBar( title = {Text(stringResource(id = R.string.home), color = Color.White)},
                 colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(id = R.color.teal_700))
             )
-        }) {
+        }) { isiRuang ->
+
+        Column(modifier = Modifier.padding(isiRuang),
+            verticalArrangement = Arrangement.SpaceBetween,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+        }
     }
 }
