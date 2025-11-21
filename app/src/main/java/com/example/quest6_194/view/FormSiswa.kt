@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.quest6_194.R
 
 @OptIn (ExperimentalMaterial3Api::class)
 @Composable
@@ -35,10 +36,17 @@ fun FormSiswa (
     pilihanJK: List<String>,
     OnSubmitButtonClicked : (MutableList<String>) -> Unit,
     modifier: Modifier = Modifier
-){
+) {
 
-    var txtNama by rememberSaveable { mutableStateOf(value = "")}
-    var txtAlamat by remember { mutableStateOf(value = "")}
-    var txtGender by remember { mutableStateOf(value = "")}
+    var txtNama by rememberSaveable { mutableStateOf(value = "") }
+    var txtAlamat by remember { mutableStateOf(value = "") }
+    var txtGender by remember { mutableStateOf(value = "") }
     val listData: MutableList<String> = mutableListOf(txtNama, txtAlamat, txtGender)
+
+    Scaffold (modifier= Modifier,
+        topBar = { TopAppBar( title = {Text(stringResource(id = R.string.home), color = Color.White)},
+                colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(id = R.color.teal_700))
+            )
+        }) {
+    }
 }
