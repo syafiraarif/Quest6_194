@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
 import androidx.compose.material3.DividerDefaults.Thickness
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -73,7 +74,28 @@ fun FormSiswa (
                 .padding(12.dp)
                 .width(250.dp),
                 thickness = dimensionResource(1dp),
-                color = Color.Blue)
+                color = Color.Blue
+            )
+
+            Row{
+                pilihanJK.forEach { item->
+                    Row(modifier = Modifier.selectable(
+                        selected = txtGender == item,
+                        onClick = {
+                            txtGender = item
+                        }
+                    ),
+                        verticalAlignment = Alignment.CenterVertically) {
+                        RadioButton(
+                            selected = txtGender == item,
+                            onClick = {
+                                txtGender = item
+                            }
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
 
         }
     }
